@@ -1,0 +1,8 @@
+category:
+  max_time:
+    minimum: 0
+question:
+  answers:
+    minimum: 4
+name_maximum: 50
+email_maximum: 255
