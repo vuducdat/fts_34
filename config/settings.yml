@@ -5,3 +5,7 @@ question:
   answers:
     minimum: 4
 name_maximum: 50
+user:
+  roles:
+    admin: admin
+    normal: normal
