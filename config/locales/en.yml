@@ -9,3 +9,7 @@ en:
   help: "Help"
   welcome: "Welcome to the Test App"
   welcome_down: "This is the home page for the test application."
+  you_sure: "Are you sure ?"
+  all_user: "All Users"
+  not_admin: "You are not admin !"
+  delete_user: "User has been deleted"
