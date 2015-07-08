@@ -1,5 +1,5 @@
 class Admin::BaseController < ApplicationController
-  before_action :verify_admin, only: [:index]
+  before_action :verify_admin, except: :show
 
   private
   def verify_admin
