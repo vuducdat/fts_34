@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20150706035619) do
     t.string   "avatar"
     t.string   "password_digest"
     t.string   "remember_digest"
-    t.string   "role"
+    t.integer  "role"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "encrypted_password",     default: "", null: false
