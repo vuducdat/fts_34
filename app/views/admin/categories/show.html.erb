@@ -1,0 +1,23 @@
+<% provide :title, @category.name %>
+<div class="row">
+  <aside class="col-md-6">
+    <section class="user_info">
+      <h1>
+        <%= @category.name %>
+      </h1>
+      <p>
+        <%= t "exetime" %>
+        <%= @category.exetime %>
+      </p>
+      <p>
+        <%= t "created_time" %>
+        <%= @category.created_at %>
+      </p>
+      <p>
+        <%= t "updated_time" %>
+        <%= @category.updated_at %>
+      </p>
+      </br>
+    </section>
+  </aside>
+</div>

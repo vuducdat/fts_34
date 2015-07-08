@@ -2,7 +2,7 @@ user:
   avatar_size: 50
   avatar: "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
 category:
-  max_time:
+  exetime:
     minimum: 0
 question:
   answers:
