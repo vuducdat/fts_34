@@ -62,5 +62,7 @@ en:
     signup: "Sign up"
   button:
     signup: "Create my account"
+    update_user: "Save changes"
   user:
     characters_minimum: "characters minimum"
+    flash_for_update_profile: "Currently waiting confirmation for: "
