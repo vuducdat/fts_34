@@ -16,6 +16,7 @@ en:
   delete_user: "User has been deleted"
   update_profile: "Update your profile"
   all_categories: "All Categories"
+  all_questions: "All questions of Category"
   new_category: "Create Category"
   delete_category: "Category has been deleted"
   create: "Create"
@@ -29,3 +30,4 @@ en:
   add_question: "Add question"
   page_error: "Error"
   error: "Have error"
+  edit: "Edit"
