@@ -142,3 +142,22 @@ input {
     color: #000;
     background-color: #42dca3;
 }
+
+div.element {
+  background-color: LightCyan;
+  height: 475px;
+  color: #606060;
+  font-family: Verona;
+  font-size: 12px;
+  padding: 10px;
+  position: fixed;
+  float: left;
+}
+
+div.one {
+  overflow: scroll;
+}
+
+.float_left {
+  float: left;
+}
