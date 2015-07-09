@@ -1,5 +1,5 @@
 class Admin::CategoriesController < Admin::BaseController
-  before_action :set_category, only: [:show, :destroy]
+  before_action :set_category, except: [:new, :index, :create]
 
   def new
     @category = Category.new
@@ -12,15 +12,26 @@ class Admin::CategoriesController < Admin::BaseController
   def show
   end
 
+  def edit
+  end
+
   def create
     @category = Category.new category_params
     if @category.save
-      redirect_to admin_categories_url, success: t("update_success")
+      redirect_to [:admin, @category], flash: {success: t("update_success")}
     else
-      reder :new
+      render :new
     end
   end
   
+  def update
+    if @category.update_attributes category_params
+      redirect_to [:admin, @category], flash: {success: t("update_success")}
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @category.destroy
     flash[:notice] = t "delete_category"
