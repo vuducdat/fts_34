@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   get "contact" => "static_pages#contact"
 
   resources :users, only: :show
+  resources :exams, except: :destroy
 
   namespace :admin do
     root "users#index"
     resources :users, except: [:show, :new, :create]
+    resources :exams, except: [:edit, :update]
     resources :categories do
       resources :questions, except: :show
     end

@@ -31,3 +31,7 @@ en:
   page_error: "Error"
   error: "Have error"
   edit: "Edit"
+  success: "Success"
+  fail: "Fail"
+  all_exams: "All Exams"
+  create_an_exam: "Create new exam"

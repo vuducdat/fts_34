@@ -12,3 +12,5 @@ user:
   roles:
     admin: admin
     normal: normal
+exam_page_size: 5
+limited_number_of_records: 10

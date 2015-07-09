@@ -1,0 +1,15 @@
+<span class="col-md-1"></span>
+
+<li>
+  <span class="col-md-4">
+  <%= exam.category.name %>
+  </span>
+  <span class="col-md-4">
+    <% if exam.done? %>
+      <%= link_to t(:view), exam_path(exam) %>
+    <% else %>
+      <%= link_to t(:start), edit_exam_path(exam) %>
+    <% end %>
+  </span>
+</li>
+<br>
