@@ -11,7 +11,7 @@
         <%= f.hidden_field :user_id, value: current_user.id %>
 
         <table class="table table-bordered">
-          <% Category.all.each do |category| %>
+          <% @categories.each do |category| %>
             <tr>
               <td><%= f.radio_button :category_id, category.id %></td>
               <td><%= category.name %></td>
