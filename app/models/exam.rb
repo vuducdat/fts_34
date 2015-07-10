@@ -9,6 +9,7 @@ class Exam < ActiveRecord::Base
     reject_if: :all_blank
 
   before_save :make_random_questions
+  before_update :update_correct_answers, :mark_the_exam
 
   scope :order_by_created_at, ->{order created_at: :DESC}
 
@@ -16,5 +17,15 @@ class Exam < ActiveRecord::Base
   def make_random_questions
     @questions = category.questions.random_questions
     @questions.each {|question| results.build question: question}
+  end
+
+  def mark_the_exam
+    self.correct_number = results.select{|result| result.answer.correct}.count
+  end
+
+  def update_correct_answers
+    results.each do |result|
+      result.correct = result.answer.correct unless result.answer_id.nil?
+    end
   end
 end
