@@ -5,6 +5,7 @@ class ExamsController < ApplicationController
     @exams = current_user.exams.order_by_created_at.paginate page: params[:page],
                                                              per_page: Settings.exam_page_size
     @exam = Exam.new
+    @categories = Category.all
   end
 
   def show
