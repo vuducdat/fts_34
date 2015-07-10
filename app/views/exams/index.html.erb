@@ -1,0 +1,35 @@
+<% provide :title, t(:all_exams) %>
+<h1><%= t :all_exams %></h1>
+<br><br>
+<div class="row">
+  <div class="col-md-3">
+  </div>
+
+  <div class="col-md-3">
+    <%= form_for @exam do |f| %>
+      <div class="border-c">
+        <%= f.hidden_field :user_id, value: current_user.id %>
+
+        <table class="table table-bordered">
+          <% Category.all.each do |category| %>
+            <tr>
+              <td><%= f.radio_button :category_id, category.id %></td>
+              <td><%= category.name %></td>
+            </tr>
+          <% end %>
+        </table>
+
+        <%= f.submit t(:create_an_exam), class: "start-new btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-md-1"></div>
+  <div class="col-md-4">
+    <div class="exams">
+      <%= render @exams %>
+    </div>
+    <%= will_paginate %>
+  </div>
+</div>
+<br>

@@ -33,10 +33,11 @@ ActiveRecord::Schema.define(version: 20150706035619) do
   create_table "exams", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "categories_id"
+    t.boolean  "done",           default: false
     t.integer  "category_id"
     t.integer  "correct_number"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   add_index "exams", ["category_id"], name: "index_exams_on_category_id"

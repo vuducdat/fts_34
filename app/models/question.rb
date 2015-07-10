@@ -11,4 +11,6 @@ class Question < ActiveRecord::Base
 
   validates :content, presence: true
   validates :answers, length: {minimum: Settings.question.answers.minimum}
+
+  scope :random_questions, ->{order("RANDOM()").limit(Settings.limited_number_of_records)}
 end
