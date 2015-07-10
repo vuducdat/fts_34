@@ -4,8 +4,7 @@ class Ability
   def initialize user
     user ||= User.new
     if user.admin?
-      can [:create, :read, :destroy], Exam
-      can :update, Exam, user_id: user.id
+      can [:manage], :all
     else
       can :create, Exam
       can [:read, :update], Exam, user_id: user.id

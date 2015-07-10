@@ -31,6 +31,7 @@ en:
   page_error: "Error"
   error: "Have error"
   edit: "Edit"
+  new: "New"
   success: "Success"
   fail: "Fail"
   all_exams: "All Exams"
@@ -49,3 +50,5 @@ en:
   update_fail: "Update Fail"
   notice:
     notice_submit: "Notice : If you refresh or back this page. This exam will auto submit"
+  delete: "Delete"
+  delete_question: "Question has been deleted"
