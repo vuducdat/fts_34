@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-md-5">
+    <h2><%= result.question.content %></h2>
+  </div>
+  <div class="col-md-6">
+    <table class="table table-bordered">
+      <% result.question.answers.each do |answer| %>
+        <tr>
+          <% if answer.id == result.answer_id %>
+            <td>
+              <%= radio_button_tag "result[#{result.id}]", result.id, true, disabled: true %>
+            </td>
+            <td>
+              <b><%= answer.content %></b>
+            </td>
+          <% else %>
+            <td>
+              <%= radio_button_tag "result[#{result.id}]", result.id, false, disabled: true %>
+            </td>
+            <td>
+              <%= answer.content %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+    <% if result.correct? %>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" class="checkbox inline" name="checkbox" value="value" checked="checked" disabled="disabled">
+          <%= t :correct_answer %>
+        </label>
+      </div>
+    <% else %>
+      <div class="checkbox">
+        <label style="color: red">
+          <input type="checkbox" class="checkbox inline" name="checkbox" value="value" disabled="disabled">
+          <%= t :correct_answer %>
+        </label>
+      </div>
+    <% end %>
+  </div>
+</div>
+<hr>

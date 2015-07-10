@@ -1,0 +1,19 @@
+<div class="row">
+  <%= f.hidden_field :id %>
+  <div class="col-md-5">
+    <h2><%= f.object.question.content %></h2>
+  </div>
+  <div class="col-md-6">
+    <table class="table table-bordered">
+      <% f.object.question.answers.each do |answer| %>
+        <tr>
+          <td>
+            <%= radio_button_tag "exam[results_attributes][#{f.index}][answer_id]", answer.id %>
+          </td>
+          <td><%= answer.content %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+<hr>

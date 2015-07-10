@@ -7,14 +7,32 @@ class ExamsController < ApplicationController
     @exam = Exam.new
   end
 
+  def show
+    @exam = Exam.find params[:id]
+  end
+
   def create
     @exam.user = current_user
-    if @exam.save
-      flash[:success] = t :success
-    else
-      flash.now[:danger] = t :fail
-    end
+    @exam.save ? flash[:success] = t(:success) : flash.now[:danger] = t(:fail)
     redirect_to exams_path
+  end
+
+  def edit
+    @exam = Exam.find params[:id]
+    if @exam.done?
+      flash[:success] = t :done_flash
+      redirect_to @exam
+    end
+  end
+
+  def update
+    if @exam.update_attributes exam_params
+      flash[:success] = t(:update_success)
+      redirect_to @exam
+    else
+      flash.now[:danger] = t(:update_fail)
+      redirect_to :back
+    end
   end
 
   private
