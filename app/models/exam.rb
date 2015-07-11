@@ -20,12 +20,12 @@ class Exam < ActiveRecord::Base
   end
 
   def mark_the_exam
-    self.correct_number = results.select{|result| result.answer.correct}.count
+    self.correct_number = results.select{|result| result.correct}.count
   end
 
   def update_correct_answers
     results.each do |result|
-      result.correct = result.answer.correct unless result.answer_id.nil?
+      result.correct = result.answer.is_correct unless result.answer_id.nil?
     end
   end
 end
