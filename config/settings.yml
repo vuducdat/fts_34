@@ -16,3 +16,5 @@ exam_page_size: 5
 limited_number_of_records: 10
 total_max_correct_number: 10
 experied_time_del_exam: 168
+host: "localhost:3000"
+from_mail_default: "from@example.com"
