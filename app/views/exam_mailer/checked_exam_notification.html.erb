@@ -1,0 +1,8 @@
+<h1><%= t "messages.title" %></h1>
+
+<p>
+  <%= t "messages.greeting" %> <%= @user.name %>,
+</p>
+<p>
+  <%= t "notice.nofication_send_mail" %> <%= link_to t "messages.here", exam_url(@exam) %>.
+</p>
