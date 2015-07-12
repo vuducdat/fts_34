@@ -39,6 +39,6 @@ class ExamsController < ApplicationController
   private
   def exam_params
     params.require(:exam).permit :category_id, :done,
-      results_attributes: [:id, :answer_id]
+      :finished, results_attributes: [:id, :answer_id]
   end
 end
