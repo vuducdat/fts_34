@@ -6,7 +6,9 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def index
-    @categories = Category.paginate page: params[:page]
+    @search = Category.search params[:q]
+    @categories = @search.result.page params[:page]
+    @search.build_condition if @search.conditions.empty?
   end
   
   def show

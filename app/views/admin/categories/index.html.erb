@@ -1,5 +1,8 @@
 <% provide :title, t("all_categories") %>
 
+<div class="text-align: left">
+  <%= render "search_form" %>
+</div>
 <h1><%= t "all_categories" %></h1>
 <ul class="users">
   <%= render @categories %>
