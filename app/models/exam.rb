@@ -12,6 +12,9 @@ class Exam < ActiveRecord::Base
   before_update :update_correct_answers, :mark_the_exam
 
   scope :order_by_created_at, ->{order created_at: :DESC}
+  scope :not_done, ->{where done: false}
+  scope :expired, ->{not_done.where("created_at <= ?",
+    Time.now - Settings.experied_time_del_exam.hours)}
 
   private
   def make_random_questions
