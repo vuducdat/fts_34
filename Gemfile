@@ -14,6 +14,7 @@ gem "faker"
 gem "whenever", require: false
 gem "sidekiq"
 gem "figaro"
+gem "friendly_id", "~> 5.0.1"
 #for userface
 gem "bootstrap-sass", "3.2.0.0"
 # Use sqlite3 as the database for Active Record

@@ -1,6 +1,6 @@
 class Admin::UsersController < Admin::BaseController
-  before_action :set_user, only: [:destroy]
-  
+  load_and_authorize_resource find_by: :slug, only: [:destroy]
+
   def index
     @users = User.paginate page: params[:page]
   end
@@ -12,7 +12,4 @@ class Admin::UsersController < Admin::BaseController
   end
 
   private
-  def set_user
-    @user = User.find params[:id]
-  end
 end
