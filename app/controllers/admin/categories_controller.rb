@@ -1,3 +1,4 @@
+require "csv"
 class Admin::CategoriesController < Admin::BaseController
   before_action :set_category, except: [:new, :index, :create]
 
@@ -9,6 +10,10 @@ class Admin::CategoriesController < Admin::BaseController
     @search = Category.search params[:q]
     @categories = @search.result.page params[:page]
     @search.build_condition if @search.conditions.empty?
+    respond_to do |format|
+      format.html
+      format.csv {send_data @categories.to_csv}
+    end
   end
   
   def show
