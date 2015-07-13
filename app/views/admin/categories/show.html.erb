@@ -32,7 +32,9 @@
   <ul>
     <% @category.questions.each do |question| %>
       <li>
-        <%= question.content  %>
+        <%= link_to question.content, [:edit, :admin, @category, question] %>
+        <%= link_to t("delete"), [:admin, @category, question], method: :delete, 
+          data: {confirm: t("you_sure")} %>
         <ul>
           <% question.answers.each do |answer| %>
             <li>

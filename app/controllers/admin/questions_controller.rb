@@ -1,5 +1,6 @@
 class Admin::QuestionsController < Admin::BaseController
-  before_action :set_category, only: [:new, :create]
+  load_and_authorize_resource :category
+  load_and_authorize_resource through: :category
 
   def new
     @question = @category.questions.build
@@ -15,11 +16,23 @@ class Admin::QuestionsController < Admin::BaseController
     end
   end
 
-  private
-  def set_category
-    @category = Category.find params[:category_id]
+  def edit
   end
 
+  def update
+    if @question.update_attributes question_params
+      redirect_to [:admin, @category], flash: {success: t("update_success")}
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @question.destroy
+    redirect_to [:admin, @category], flash: {success: t("delete_question")}
+  end
+
+  private
   def question_params
     params.require(:question).permit :content,
       answers_attributes: [:id, :content, :is_correct, :_destroy]
