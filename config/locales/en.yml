@@ -49,6 +49,8 @@ en:
   update_success: "Update Success"
   update_fail: "Update Fail"
   search: "Search"
+  download: "Download : "
+  csv: "CSV"
   notice:
     notice_submit: "Notice : If you refresh or back this page. This exam will auto submit"
   delete: "Delete"

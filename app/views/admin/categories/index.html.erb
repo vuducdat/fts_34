@@ -1,5 +1,8 @@
 <% provide :title, t("all_categories") %>
-
+<h2>
+  <%= t "download" %>
+  <%= link_to t("csv"), admin_categories_path(format: :csv) %>
+</h2>
 <div class="text-align: left">
   <%= render "search_form" %>
 </div>
