@@ -14,5 +14,24 @@ class Category < ActiveRecord::Base
         csv << category.attributes.values_at(*column_names)
       end
     end
-  end  
+  end
+
+  def self.import file
+    spreadsheet = open_spreadsheet file
+    header = spreadsheet.row 1
+    (2..spreadsheet.last_row).each do |i|
+      row = Hash[[header, spreadsheet.row(i)].transpose]
+      category = find_by_id(row["id"]) || new
+      category.attributes = row.to_hash
+      category.save!
+    end
+  end
+
+  def self.open_spreadsheet file
+    if Settings.csv.type == File.extname(file.original_filename)
+      Roo::CSV.new file.path
+    else
+      raise I18n.t("unfile") + "#{file.original_filename}"
+    end
+  end
 end

@@ -1,0 +1,4 @@
+<%= form_tag admin_imports_path, method: :post, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag t("import"), class: "btn btn-sm btn-info" %>
+<% end %>

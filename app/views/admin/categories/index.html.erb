@@ -1,13 +1,18 @@
 <% provide :title, t("all_categories") %>
-<h2>
-  <%= t "download" %>
-  <%= link_to t("csv"), admin_categories_path(format: :csv) %>
-</h2>
-<div class="text-align: left">
+
+<div class="col-md-3">
   <%= render "search_form" %>
+  <h2>
+    <%= t "download" %>
+    <%= link_to t("csv"), admin_categories_path(format: :csv) %>
+  </h2>
+  <h2><%= t "import_category" %></h2>
+  <%= render "imports_category_form" %>
 </div>
-<h1><%= t "all_categories" %></h1>
-<ul class="users">
-  <%= render @categories %>
-</ul>
-<%= will_paginate %>
+<div class="col-md-8">
+  <h1><%= t "all_categories" %></h1>
+  <ul class="users">
+    <%= render @categories %>
+  </ul>
+  <%= will_paginate %>
+</div>
