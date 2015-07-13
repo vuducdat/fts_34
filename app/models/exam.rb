@@ -10,6 +10,7 @@ class Exam < ActiveRecord::Base
 
   before_save :make_random_questions
   before_update :update_correct_answers, :mark_the_exam
+  after_update :send_mail_admin, only: :update
 
   scope :order_by_created_at, ->{order created_at: :DESC}
   scope :not_done, ->{where done: false}
@@ -30,5 +31,9 @@ class Exam < ActiveRecord::Base
     results.each do |result|
       result.correct = result.answer.is_correct unless result.answer_id.nil?
     end
+  end
+
+  def send_mail_admin
+    EmailWorker.perform_async @exam.id, current_user.id
   end
 end

@@ -53,6 +53,7 @@ en:
   csv: "CSV"
   notice:
     notice_submit: "Notice : If you refresh or back this page. This exam will auto submit"
+    nofication_send_mail_admin: "Please check new done exam at"
   delete: "Delete"
   delete_question: "Question has been deleted"
   messages:
@@ -65,3 +66,6 @@ en:
     title: "Framgia Testing System"
   links:
     start_now: "Start now"
+  exam_mailer:
+    done_exam_notification:
+      subject: "New exam done."
