@@ -1,15 +1,26 @@
 <h1><%= t :exam %></h1>
 <br>
+
+<div class="clock">
+  <span id="hour">00</span>
+  <span>:</span>
+  <span id="minute">00</span>
+  <span>:</span>
+  <span id="second">00</span>
+</div>
+<div class="center notice_exam"><%= I18n.t "notice.notice_submit" %></div><br>
+
 <%= form_for @exam do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <%= f.hidden_field :done, value: true %>
+  <%= f.hidden_field :finished, value: Time.now %>
 
   <%= f.fields_for :results do |builder| %>
     <%= render "result_form", f: builder %>
   <% end %>
 
   <div class="row">
-    <%= f.submit t("submit"), class: "btn btn-primary", data: {confirm: t(:confirm_notification)} %>
+    <%= f.submit t("submit"), class: "btn btn-primary submit-exam" %>
   </div>
   <br><br><br><br><br><br>
 <% end %>
