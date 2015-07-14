@@ -69,3 +69,4 @@ en:
   exam_mailer:
     done_exam_notification:
       subject: "New exam done."
+  total_max_correct_number: "/10"
