@@ -10,6 +10,4 @@ class Admin::UsersController < Admin::BaseController
     flash[:notice] = t "delete_user"
     redirect_to admin_users_url
   end
-
-  private
 end
