@@ -51,6 +51,9 @@ en:
   search: "Search"
   download: "Download : "
   csv: "CSV"
+  unfile: "Unknown file type : "
+  import_category: "Import categories from CSV"
+  import: "Import"
   notice:
     notice_submit: "Notice : If you refresh or back this page. This exam will auto submit"
     nofication_send_mail_admin: "Please check new done exam at"

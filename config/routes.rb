@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     root "users#index"
     resources :users, except: [:show, :new, :create]
     resources :exams, except: [:edit, :update]
+    resources :imports, only: :create
     resources :categories do
       resources :questions, except: :show
     end

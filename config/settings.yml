@@ -12,6 +12,8 @@ user:
   roles:
     admin: admin
     normal: normal
+csv:
+  type: .csv
 exam_page_size: 5
 limited_number_of_records: 10
 experied_time_del_exam: 168
