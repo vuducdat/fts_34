@@ -27,11 +27,12 @@ class ExamsController < ApplicationController
   end
 
   def update
+    @exam = Exam.find params[:id]
     if @exam.update_attributes exam_params
-      flash[:success] = t(:update_success)
+      flash[:success] = t :update_success
       redirect_to @exam
     else
-      flash.now[:danger] = t(:update_fail)
+      flash.now[:danger] = t :update_fail
       redirect_to :back
     end
   end
