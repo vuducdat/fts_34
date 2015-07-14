@@ -11,6 +11,7 @@ class Exam < ActiveRecord::Base
   before_save :make_random_questions
   before_update :update_correct_answers, :mark_the_exam
   after_update :send_mail_admin, only: :update
+  after_update :send_mail_to_user, only: :update
 
   scope :order_by_created_at, ->{order created_at: :DESC}
   scope :not_done, ->{where done: false}
@@ -35,5 +36,9 @@ class Exam < ActiveRecord::Base
 
   def send_mail_admin
     EmailWorker.perform_async @exam.id, current_user.id
+  end
+
+  def send_mail_to_user
+    CheckedEmailWorker.perform_async @exam.id
   end
 end

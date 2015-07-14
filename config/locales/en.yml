@@ -54,9 +54,12 @@ en:
   unfile: "Unknown file type : "
   import_category: "Import categories from CSV"
   import: "Import"
+  success_flash: "Successfully!"
+  failed_flash: "Failed!"
   notice:
     notice_submit: "Notice : If you refresh or back this page. This exam will auto submit"
     nofication_send_mail_admin: "Please check new done exam at"
+    nofication_send_mail: "Your exam has been checked. View it"
   delete: "Delete"
   delete_question: "Question has been deleted"
   messages:
@@ -67,9 +70,12 @@ en:
     subject: "Examination not yet start"
     body: "You have created your exam for over 2 hours and not start yet."
     title: "Framgia Testing System"
+    here: "here"
   links:
     start_now: "Start now"
   exam_mailer:
     done_exam_notification:
       subject: "New exam done."
+    checked_exam_notification:
+      subject: "Your exam has been checked."
   total_max_correct_number: "/10"

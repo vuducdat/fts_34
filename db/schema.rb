@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150712103820) do
+ActiveRecord::Schema.define(version: 20150714065910) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "content"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150712103820) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.datetime "finished"
+    t.boolean  "checked",        default: false
   end
 
   add_index "exams", ["category_id"], name: "index_exams_on_category_id"
