@@ -1,6 +1,5 @@
-user:
-  avatar_size: 50
-  avatar: "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
+avatar: "https://secure.gravatar.com/avatar/#"
+avatar_size: 50
 category:
   exetime:
     minimum: 0

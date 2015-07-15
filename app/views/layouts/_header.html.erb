@@ -6,6 +6,7 @@
         <li><%= link_to t("help"), help_path %></li>
         <% if user_signed_in? %>
           <% if current_user.admin? %>
+            <li class="divider"><%= link_to t("all_user"), admin_users_path %></li>
             <li class="dropdown">
               <%= link_to t("all_categories"), "#", class: "dropdown-toggle",
                 data: {toggle: "dropdown"} %>
