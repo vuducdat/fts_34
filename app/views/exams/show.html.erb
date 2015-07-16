@@ -1,21 +1,19 @@
-<div class="row">
-  <h2><%= t :test_result %></h2>
+<h2><%= t :test_result %></h2>
 
-  <div class="col-md-8 element one">
-    <%= render @exam.results %>
-  </div>
+<div class="col-md-8 element one">
+  <%= render @exam.results %>
+</div>
 
-  <div class="col-md-3 element two">
-    <p><%= t :result %>: <%= @exam.correct_number %><%= t "total_max_correct_number" %></p>
-    <p><%= t :test_date %>: <%= @exam.updated_at %></p>
-    <table class="table table-bordered">
-      <tr>
-        <th><%= t :correct %></th>
-        <th><%= t :question %></th>
-      </tr>
-      <% @exam.results.each do |result| %>
-        <%= render "row", object: result %>
-      <% end %>
-    </table>
-  </div>
+<div class="col-md-4">
+  <p><%= t :result %>: <%= @exam.correct_number %><%= t "total_max_correct_number" %></p>
+  <p><%= t :test_date %>: <%= @exam.updated_at %></p>
+  <table class="table table-bordered">
+    <tr>
+      <th><%= t :correct %></th>
+      <th><%= t :question %></th>
+    </tr>
+    <% @exam.results.each do |result| %>
+      <%= render "row", object: result %>
+    <% end %>
+  </table>
 </div>
