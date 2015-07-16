@@ -3,6 +3,6 @@ class Answer < ActiveRecord::Base
 
   belongs_to :question
 
-  validates :content, presence: true
-  validates_uniqueness_of :content, scope: :question
+  validates :content, presence: true,
+    uniqueness: {case_sensitive: false, scope: :question}
 end

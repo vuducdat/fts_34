@@ -35,10 +35,10 @@ class Exam < ActiveRecord::Base
   end
 
   def send_mail_admin
-    EmailWorker.perform_async @exam.id, current_user.id
+    EmailWorker.perform_async self.id, self.user_id
   end
 
   def send_mail_to_user
-    CheckedEmailWorker.perform_async @exam.id
+    CheckedEmailWorker.perform_async self.id
   end
 end
