@@ -79,3 +79,5 @@ en:
     checked_exam_notification:
       subject: "Your exam has been checked."
   total_max_correct_number: "/10"
+  view: "view"
+  start: "start"
