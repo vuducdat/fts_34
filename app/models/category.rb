@@ -2,7 +2,7 @@ class Category < ActiveRecord::Base
   has_many :exams, dependent: :destroy
   has_many :questions, dependent: :destroy
 
-  validates :name, :exetime, presence: true
+  validates :name, :exetime, presence: true, uniqueness: true
   validates :exetime, numericality: {only_integer: true,
     greater_than: 0}
 
@@ -21,7 +21,7 @@ class Category < ActiveRecord::Base
     header = spreadsheet.row 1
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      category = find_by_id(row["id"]) || new
+      category = find_by_name(row["name"]) || new
       category.attributes = row.to_hash
       category.save!
     end
