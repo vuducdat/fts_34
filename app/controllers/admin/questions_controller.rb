@@ -4,7 +4,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def new
     @question = @category.questions.build
-    Settings.question.answers.minimum.times{@question.answers.build}
+    2.times{@question.answers.build}
   end
 
   def create
