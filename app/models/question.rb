@@ -10,7 +10,7 @@ class Question < ActiveRecord::Base
     allow_destroy: true
 
   validates :content, presence: true
-  validates :answers, length: {minimum: Settings.question.answers.minimum}
+  validates :answers, length: {minimum: 4}
 
-  scope :random_questions, ->{order("RANDOM()").limit(Settings.limited_number_of_records)}
+  scope :random_questions, ->{order("RANDOM()").limit 10}
 end

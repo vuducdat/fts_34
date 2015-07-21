@@ -41,12 +41,12 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-    address: ENV["address"],
-    port: ENV["port"],
-    domain: ENV["domain"],
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "gmail.com",
     user_name: ENV["user_name"],
     password: ENV["password"],
-    authentication: ENV["authentication"],
+    authentication: "authentication",
     enable_starttls_auto: true
 }
   config.action_mailer.default_url_options = {host: Settings.host}
