@@ -16,7 +16,7 @@ class Exam < ActiveRecord::Base
   scope :order_by_created_at, ->{order created_at: :DESC}
   scope :not_done, ->{where done: false}
   scope :expired, ->{not_done.where("created_at <= ?",
-    Time.now - Settings.experied_time_del_exam.hours)}
+    Time.now - 168.hours)}
 
   private
   def make_random_questions

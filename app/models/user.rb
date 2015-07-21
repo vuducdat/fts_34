@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :exams, dependent: :destroy
 
-  validates :name, presence: true, length: {maximum: Settings.name_maximum}
+  validates :name, presence: true, length: {maximum: 50}
 
   before_create :set_default_role
 

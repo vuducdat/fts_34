@@ -4,7 +4,7 @@ class Category < ActiveRecord::Base
 
   validates :name, :exetime, presence: true
   validates :exetime, numericality: {only_integer: true,
-    greater_than: Settings.category.exetime.minimum}
+    greater_than: 0}
 
   private
   def self.to_csv options = {}
