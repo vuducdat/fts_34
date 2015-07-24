@@ -1,5 +1,5 @@
 class Admin::UsersController < Admin::BaseController
-  load_and_authorize_resource find_by: :slug, only: [:destroy]
+  load_and_authorize_resource only: [:destroy]
 
   def index
     @users = User.paginate page: params[:page]

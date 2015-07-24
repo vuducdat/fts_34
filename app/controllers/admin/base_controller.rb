@@ -6,6 +6,6 @@ class Admin::BaseController < ApplicationController
     unless current_user.admin?
       flash[:danger] = t "not_admin"
       redirect_to root_url
-    end   
+    end
   end
 end
