@@ -3,10 +3,13 @@ FactoryGirl.define do
     name {Faker::Name.name}
     email {Faker::Internet.email}
     password "123456789"
-    password_confirmation {|user| user.password}
+    role "normal"
+  end
 
-    factory :admin do
-      role = 0
-    end
+  factory :admin do
+    name {Faker::Name.name}
+    email {Faker::Internet.email}
+    password "123456789"
+    role "admin"
   end
 end
