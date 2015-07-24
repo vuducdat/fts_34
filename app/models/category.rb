@@ -2,7 +2,7 @@ class Category < ActiveRecord::Base
   has_many :exams, dependent: :destroy
   has_many :questions, dependent: :destroy
 
-  validates :name, :exetime, presence: true, uniqueness: true
+  validates :name, :exetime, presence: true, uniqueness: false
   validates :exetime, numericality: {only_integer: true,
     greater_than: 0}
 

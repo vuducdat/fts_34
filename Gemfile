@@ -62,6 +62,7 @@ group :development, :test do
   gem "rspec-collection_matchers"
   gem "cucumber-rails", require: false
   gem "database_cleaner"
+  gem "rspec-activemodel-mocks"
 end
 
 group :test do

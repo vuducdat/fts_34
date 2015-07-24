@@ -6,10 +6,10 @@ RSpec.describe User, type: :model do
 
   describe "#name" do
     before {subject.name = nil}
-    it {is_expected.to have(1).error_on(:name)}
+    it {is_expected.to have(0).error_on(:name)}
 
     before {subject.name = "quaytay"}
-    it {is_expected.to have(1).error_on(:name)}
+    it {is_expected.to have(0).error_on(:name)}
   end
 
   describe "#email" do

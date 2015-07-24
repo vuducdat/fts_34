@@ -186,6 +186,10 @@ GEM
     roo (2.1.0)
       nokogiri (~> 1)
       rubyzip (~> 1.1, < 2.0.0)
+    rspec-activemodel-mocks (1.0.1)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      rspec-mocks (>= 2.99, < 4.0)
     rspec-collection_matchers (1.1.2)
       rspec-expectations (>= 2.99.0.beta1)
     rspec-core (3.3.2)
@@ -287,6 +291,7 @@ DEPENDENCIES
   ransack
   redis
   roo
+  rspec-activemodel-mocks
   rspec-collection_matchers
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
